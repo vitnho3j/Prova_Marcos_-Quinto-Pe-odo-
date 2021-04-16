@@ -1,0 +1,79 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+    {% include 'header.html' %}
+    <header class="masthead" id = "header">
+            <div class="container d-flex h-100 align-items-center">
+                <div class="mx-auto text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">E-Championship</h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">Crie ou participe de campeonatos e times.</h2>
+                    <a class="btn btn-primary js-scroll-trigger" href="restrito">Área Administrativa</a>
+                </div>
+            </div>
+    </header>
+    <!-- About-->
+    <section class="about-section text-center" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="text-white mb-4">A maior plataforma de campeonatos amadores de e-sports</h2>
+                    <p class="text-white-50">
+                        A E-Championship é uma plataforma que te permite criar campeonatos amadores de vários jogos
+                        eletrónicos atuais, além disso você
+                        também pode participar de campeonatos como competidou ou técnico, e até criar o seu próprio time.
+                    </p>
+                </div>
+            </div>
+            <img class="img-fluid" src="{% static 'assets/img/4.jpg' %}"/>
+        </div>
+    </section>
+    <!-- Projects-->
+    <section class="projects-section bg-light" id="projects">
+        <div class="container">
+            <!-- Featured Project Row-->
+            <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+                <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="{% static '/assets/img/1.jpg' %}"
+                                                    alt=""/></div>
+                <div class="col-xl-4 col-lg-5">
+                    <div class="featured-text text-center text-lg-left">
+                        <h4>Seja um Organizador</h4>
+                        <p class="text-black-50 mb-0">Crie o seu próprio campeonato e promova a diversão.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Project One Row-->
+            <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+                <div class="col-lg-6"><img class="img-fluid" src="{% static '/assets/img/time.png' %}" alt=""/></div>
+                <div class="col-lg-6">
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-left">
+                                <h4 class="text-white">Crie Seu Próprio Time</h4>
+                                <p class="mb-0 text-white-50">Crie seu próprio time e mostrem do que vocês são capazes.</p>
+                                <hr class="d-none d-lg-block mb-0 ml-0"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Project Two Row-->
+            <div class="row justify-content-center no-gutters">
+                <div class="col-lg-6"><img class="img-fluid" src="{% static '/assets/img/competidor.jpg' %}" alt=""/></div>
+                <div class="col-lg-6 order-lg-first">
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-right">
+                                <h4 class="text-white">Participe de Campeonatos</h4>
+                                <p class="mb-0 text-white-50">Mostre toda a sua habilidade e maestria nos games, seja como
+                                    técnico ou competidor.</p>
+                                <hr class="d-none d-lg-block mb-0 mr-0"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    {% include 'footer.html' %}
+</html>

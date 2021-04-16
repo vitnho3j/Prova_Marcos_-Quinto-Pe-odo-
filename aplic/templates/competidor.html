@@ -1,0 +1,38 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+    {% include 'header.html' %}
+    <header class="masthead" id = "header">
+            <div class="container d-flex h-100 align-items-center">
+                <div class="mx-auto text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">Competidores</h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">E-Championship.</h2>
+                </div>
+            </div>
+    </header>
+    <div class="meio">
+        <div class="row">
+            {% for competidor in competidores %}
+            <div class="col-md-4 mb-3 mb-md-3">
+                <center><img class="img-fluid" src="{{ competidor.foto.thumb.url }}" alt="{{competidor.nome}}"/></center>
+                <div class="card py-4 h-30">
+                    <div class="card-body text-center">
+                        <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                        <h4 class="text-uppercase m-0">{{ competidor.nome }}</h4>
+                        <hr class="my-4"/>
+                        <h6 class="text-uppercase m-0">Time: {{competidor.time}}</h6>
+                        <h6 class="text-uppercase m-3">Jogo: {{competidor.jogo}}</h6>
+                        <h6 class="text-uppercase m-3">Idade: {{competidor.idade}}</h6>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class = 'inicio'>
+        <center><a class="btn btn-primary js-scroll-trigger" href="/">Voltar á página inicial</a></center>
+    </div>
+    <!-- Footer-->
+    {% include 'footer.html' %}
+
+</html>
