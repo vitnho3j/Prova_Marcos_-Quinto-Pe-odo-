@@ -1,4 +1,6 @@
 {% load static %}
+{% load i18n %}
+<html lang="{{ lang }}">
 <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -19,16 +21,16 @@
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container">
                 <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/">Início</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/competidores">Competidores</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/times">Times</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/tecnicos">Técnicos</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/organizadores">Organizadores</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/partidas">Partidas</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/campeonatos">Campeonatos</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/resultados">Resultados</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#header">Topo</a></li>
+                    <ul class="navbar-nav ml-auto" style="padding:0;">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/">{% trans 'Início' %}</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/competidores">{% trans 'Competidores' %}</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/times">{% trans 'Times' %}</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/tecnicos">{% trans 'Técnicos' %}</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/organizadores">{% trans 'Organizadores' %}</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/partidas">{% trans 'Partidas' %}</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/campeonatos">{% trans 'Campeonatos' %}</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/resultados">{% trans 'Resultados' %}</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/contato">{% trans 'Contato' %}</a></li>
                     </ul>
                 </div>
             </div>

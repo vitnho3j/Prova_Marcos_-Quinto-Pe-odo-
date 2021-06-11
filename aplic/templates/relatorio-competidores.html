@@ -1,0 +1,33 @@
+{% load i18n %}
+{% load static %}
+<html lang="{{ lang }}">
+    <head>
+    <title>{% trans 'RELATORIO DOS JOGADORES' %}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+    </head>
+    <body>
+        <center>
+            <h1>{% trans 'Relatório dos Jogadores' %}</h1>
+        </center>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">{% trans 'Nome do Jogador' %}</th>
+                    <th scope="col">{% trans 'Time' %}</th>
+                    <th scope="col">{% trans 'Jogo' %}</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for c in competidores %}
+                    <tr>
+                        <th scope="row">{{c.nome}}</th>
+                        <th scope="row">{{c.time}}</th>
+                        <th scope="row">{{c.jogo}}</th>
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+{% load static %}
+{% load i18n %}
+<html lang="{{ lang }}">
+    {% include 'header.html' %}
+    <header class="masthead" id = "header">
+            <div class="container d-flex h-100 align-items-center">
+                <div class="mx-auto text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">Competidores</h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">E-Championship.</h2>
+                </div>
+            </div>
+    </header>
+    <body>
+     <div class="meio">
+         <center><h2>{{time.nome}}</h2></center>
+         <br>
+        <div class="row">
+            <section id="jogadores">
+                <div class="container">
+                    <div class = "row">
+                        <table class = "table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nome dos Jogadores</th>
+                                    <th scope="col" style="padding-left:70px">Jogo</th>
+                                    <th scope="col" style="padding-left:150px;">Foto</th>
+                               </tr>
+                            </thead>
+                            <tbody>
+
+                                {% for c in page_obj %}
+                                    <tr>
+                                        <th scope="row">{{ c.nome }}</th>
+                                        <th scope="row">{{ c.jogo }}</th>
+                                        <th scope="row"><center><img class="img-fluid" src="{{ c.foto.thumb.url }}"  style="height:200px;"/></center></th>
+                                    </tr>
+                                {% endfor %}
+
+                            </tbody>
+                        </table>
+                        {% include 'tpaginacao.html' %}
+                    </div>
+                </div>
+            </section>
+        </div>
+     </div>
+    </body>
+
+    <footer>
+       {% include 'footer.html' %}
+    </footer>
+</html>

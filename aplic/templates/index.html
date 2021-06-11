@@ -1,13 +1,14 @@
 {%load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
+{% load i18n %}
+<html lang="{{ lang }}">
     {% include 'header.html' %}
     <header class="masthead" id = "header">
             <div class="container d-flex h-100 align-items-center">
                 <div class="mx-auto text-center">
                     <h1 class="mx-auto my-0 text-uppercase">E-Championship</h1>
-                    <h2 class="text-white-50 mx-auto mt-2 mb-5">Crie ou participe de campeonatos e times.</h2>
-                    <a class="btn btn-primary js-scroll-trigger" href="restrito">Área Administrativa</a>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">{% trans 'Crie ou participe de campeonatos e times.' %}</h2>
+                    <a class="btn btn-primary js-scroll-trigger" href="restrito">{% trans 'Área Administrativa' %}</a>
+                    <a class="btn btn-primary js-scroll-trigger" href="{% url 'relatorio-competidores' %}">{% trans 'Relatório' %}</a>
                 </div>
             </div>
     </header>
@@ -16,11 +17,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <h2 class="text-white mb-4">A maior plataforma de campeonatos amadores de e-sports</h2>
-                    <p class="text-white-50">
-                        A E-Championship é uma plataforma que te permite criar campeonatos amadores de vários jogos
-                        eletrónicos atuais, além disso você
-                        também pode participar de campeonatos como competidou ou técnico, e até criar o seu próprio time.
+                    <h2 class="text-white mb-4">{% trans 'A maior plataforma de campeonatos amadores de e-sports' %}</h2>
+                    <p class="text-white-50">{% trans 'A E-Championship é uma plataforma que te permite criar campeonatos amadores de vários jogos eletrónicos atuais, além disso você também pode participar de campeonatos como competidou ou técnico, e até criar o seu próprio time' %}
                     </p>
                 </div>
             </div>
@@ -36,8 +34,8 @@
                                                     alt=""/></div>
                 <div class="col-xl-4 col-lg-5">
                     <div class="featured-text text-center text-lg-left">
-                        <h4>Seja um Organizador</h4>
-                        <p class="text-black-50 mb-0">Crie o seu próprio campeonato e promova a diversão.</p>
+                        <h4>{% trans 'Seja um Organizador' %}</h4>
+                        <p class="text-black-50 mb-0">{% trans 'Crie o seu próprio campeonato e promova a diversão.' %}</p>
                     </div>
                 </div>
             </div>
@@ -48,8 +46,8 @@
                     <div class="bg-black text-center h-100 project">
                         <div class="d-flex h-100">
                             <div class="project-text w-100 my-auto text-center text-lg-left">
-                                <h4 class="text-white">Crie Seu Próprio Time</h4>
-                                <p class="mb-0 text-white-50">Crie seu próprio time e mostrem do que vocês são capazes.</p>
+                                <h4 class="text-white">{% trans 'Crie Seu Próprio Time' %}</h4>
+                                <p class="mb-0 text-white-50">{% trans 'Crie seu próprio time e mostrem do que vocês são capazes.' %}</p>
                                 <hr class="d-none d-lg-block mb-0 ml-0"/>
                             </div>
                         </div>
@@ -63,9 +61,8 @@
                     <div class="bg-black text-center h-100 project">
                         <div class="d-flex h-100">
                             <div class="project-text w-100 my-auto text-center text-lg-right">
-                                <h4 class="text-white">Participe de Campeonatos</h4>
-                                <p class="mb-0 text-white-50">Mostre toda a sua habilidade e maestria nos games, seja como
-                                    técnico ou competidor.</p>
+                                <h4 class="text-white">{% trans 'Participe de Campeonatos' %}</h4>
+                                <p class="mb-0 text-white-50">{% trans 'Mostre toda a sua habilidade e maestria nos games, seja como técnico ou competidor' %}</p>
                                 <hr class="d-none d-lg-block mb-0 mr-0"/>
                             </div>
                         </div>
@@ -74,6 +71,7 @@
             </div>
         </div>
     </section>
+
     <!-- Footer-->
     {% include 'footer.html' %}
 </html>

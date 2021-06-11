@@ -1,4 +1,5 @@
-{%load static %}
+{% load static %}
+{% load bootstrap4 %}
 <!DOCTYPE html>
 <html lang="pt-br">
     {% include 'header.html' %}
@@ -21,16 +22,62 @@
                         <h4 class="text-uppercase m-0">{{ time.nome }}</h4>
                         <hr class="my-4"/>
                         <h6 class="text-uppercase m-0">Sigla: {{time.sigla}}</h6>
+                        <hr class="my-4"/>
+                        <a href="{% url 'teste' id=time.id %}" class="text-uppercase m-0">Jogadores</a>
                     </div>
                 </div>
             </div>
             {% endfor %}
         </div>
     </div>
+    <div>
+        <hr class="my-4"/>
+        <center><h4 class="text-uppercase m-0">Gráfico de competidores por time</h4></center>
+        <hr class="my-4"/>
+        <section class="our-achievement section overlay">
+            <div class="container">
+                <div class="row">
+                    <canvas id="dados-vitorias-time" height="50"></canvas>
+                </div>
+            </div>
+        </section>
+        <hr class="my-4"/>
+    </div>
     <div class = 'inicio'>
         <center><a class="btn btn-primary js-scroll-trigger" href="/">Voltar á página inicial</a></center>
     </div>
     <!-- Footer-->
     {% include 'footer.html' %}
+    {% bootstrap_javascript jquery='full' %}
+    <script type="text/javascript" src="{% static 'js/Chart.min.js' %}"></script>
+    <script type="text/javascript">
+        $.get('{% url "dados-vitorias-time" %}', function(dados) {
+
+            var ctx = $("#dados-vitorias-time").get(0).getContext("2d");
+            rotulos = dados['labels']
+            valores = dados['datasets'][0]['data']
+
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: rotulos,
+                    datasets: [{
+                        data: valores,
+                        backgroundColor: [
+                            'rgba(153, 182, 255, 0.9)',
+                            'rgba(255, 206, 86, 0.9)',
+                            'rgba(255, 159, 64, 0.9)',
+                            'rgba(75, 192, 192, 0.9)',
+                            'rgba(255, 99, 132, 0.9)',
+                            'rgba(54, 162, 235, 0.9)',
+                        ]
+                    }]
+                }
+            });
+        });
+
+    </script>
+
+
 
 </html>
